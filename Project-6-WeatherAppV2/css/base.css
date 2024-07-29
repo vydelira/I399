@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #D6DBDF;
+  color: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app-container {
+  height: 100vh;
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-container {
+  background: rgb(16,123,167);
+  background: linear-gradient(360deg, rgba(2,116,163,1) 0%, rgba(51,165,212,1) 50%, rgba(102,227,252,1) 100%);
+  border: 2px solid black;
+  height: 525px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.overlay {
+  background: rgba(31,81,131,.7);
+  border-radius: 10px;
+  padding-bottom: 18px;
+  margin: auto;
+  width: 94%;
+}
+
+.weather-header {
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.weather-header h1 {
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 30px 0;
+}
+
+.weather-header div {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border-bottom: 2px solid #eee;
+}
+
+.weather-header button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #eee;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  color: #D5D8DC;
+  font-size: 1.5rem;
+}
+
+.input::-webkit-input-placeholder {
+  color:#eee;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.weather-info {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  align-items: center;
+  margin: auto;
+}
+
+.weather-info h1 {
+  font-size: 60px;
+  margin: 0;
+  padding: 5px;
+}
+.weather-info h2, .weather-info h3 {
+  margin: 0;
+  padding: 5px;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  margin-top: 30px;
+  color: black;
+}
+
+.message {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  position: relative;
+  bottom: 30px;
+}
+
+.weather-desc {
+  text-align: center;
+  padding: 15px;
+}
+
+.condition {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.icon { 
+  width: 70px;
+  position: relative;
+  bottom: 18px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+} 
+
+.radio {
+  width: 300px;
+  margin: 0em auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding-top: 0;
+}
+
+.radio label {
+  padding: 0em 1.25em;
+}

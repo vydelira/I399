@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 6: More Weather</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<!-- content for your weather app goes here -->
+  <div class="app-container">
+    <section class="weather-container">
+      <div class="overlay">
+        <header class="weather-header">
+          <h1>Indiana Weather.io</h1>
+          <div>
+            <input type="text" name="search1" class="input" placeholder="Enter City or Zipcode" maxlength="25">
+            <button type="submit" class="material-icons">search</button>
+          </div>
+        </header>
+        <p class="error"></p>
+        <div class="weather-info">
+          <p class="info">No Weather to Display.</p>
+        </div>
+        <p class="message"></p>
+        <div class="radio">
+          <label><input type="radio" name="temp" id="f" checked>&deg;F</label>
+          <label><input type="radio" name="temp" id="c">&deg;C</label>
+        </div>
+      </div>
+  </div> 
+</div>
+  <!-- 
+    Just like in Pyton, we can use individual JS files as 'modules' 
+    However it looks a bit different.. notice how we are importing the data
+    needed here as opposed to P2 where we included a second script tag.
+    This is a lot less brittle and a more modern way to include files.
+  -->
+  <script src="js/P6.js" type="module"></script>
+</body>
+</html>
