@@ -1,0 +1,147 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+  General
+*/
+.container {
+  max-width: 1020px;
+  margin: 30px auto 150px;
+  padding: 15px;
+}
+
+/* 
+PART TWO
+Use Grid to create the three column layout
+  - if you want to try to make it more responsive, try this:
+  - https://css-tricks.com/intrinsically-responsive-css-grid-with-minmax-and-min/
+  - https://dev.to/evanminto/intrinsically-responsive-css-grid-with-minmax-and-min-1n55
+  - if you've not had I360, then just try to make three columns of the right proportions
+*/
+
+/*
+  PART THREE
+  Update the CSS for the first column (drug images) to look like the example
+  - hover effect and label for each drug image
+  - an effect that remains when a drug is clicked (to show it's been selected)
+  - CSS transitions to help with the interface interactions
+ */
+
+/*
+  Typography
+*/
+
+h1, h2, p, figcaption {
+  font-family: 'Catamaran', sans-serif;
+  line-height: 1.3em;
+}
+
+
+
+/*
+  Interactive
+*/
+
+#interactive {
+  /* use Grid */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 1.5em;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+/* drugs containing acetametaphin */
+#drugs {
+  /* max-height: 448px;  */
+  /* Use grid, max-height optional */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.0em;
+
+}
+
+figure { 
+  position: relative;
+  float: left;
+  margin: auto;
+}
+
+figcaption {
+  /* use CSS position property to adjust location */
+  font-size: 14px;
+  font-weight: bolder;
+  text-align: center;
+  position: absolute;
+  top: 2.2em;
+  width: 100px;
+  padding: 5px 0px;
+  opacity: 1;
+  background-color: #ddd;
+}
+
+img {
+  border-radius: 5%;
+  opacity: .5;
+}
+ 
+figure:hover {
+  cursor: pointer;
+}
+
+figure:hover img {
+  opacity: 1;
+  transition: .5s ease;
+}
+
+figure:hover figcaption {
+  opacity: 0;
+  transition: .5s ease;
+}
+
+/* PART FOUR - style for when drug selected */
+figure.selected img {
+  opacity: 1;
+}
+
+figure.selected figcaption {
+  opacity: 0;
+}
+
+/* how close to lethal dose bar */
+#progressbar {
+  /* because this is a component, use flexbox */
+  display: flex;
+  flex-flow: column-reverse wrap;
+}
+
+.meter {
+  width: 16px;
+  height: 100%;
+  margin-left: 30px;
+  border: 1px solid lightslategray;
+  border-radius: 4px;
+  position: relative;
+}
+
+.meter > span {
+  background-color: darkred;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+ transition: height 0.3s linear;
+}
+
+.label {
+  margin: 0;
+  padding-left: 1.0em;
+  position: relative;
+  top: 10px;
+  left: 0;
+}
